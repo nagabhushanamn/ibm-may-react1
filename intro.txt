@@ -107,6 +107,7 @@ how to run .js-program ?
 
 js-topics
 
+-------------------------------------------------------
 level-1
 -------------------------------------------------------
 1. data-types
@@ -116,7 +117,21 @@ level-1
 5. 'this' / function-binding ( static & dynamic )
 -------------------------------------------------------
 level-2
-6. ES6 - new syntax
+-------------------------------------------------------
+6. ES6 : new-syntax
+7. ES modules
+8. collections ( list/array , set , map )
+9. Iterables & generators
+10. Async APIs ( promise api , RxJS )
+---------------------------------------------------------
+
+refences :
+
+    - http://exploringjs.com/
+    - https://developer.mozilla.org/bm/docs/Web/JavaScript
+    - http://latentflip.com/loupe/
+
+-----------------------------------------------------------    
 
 
 
