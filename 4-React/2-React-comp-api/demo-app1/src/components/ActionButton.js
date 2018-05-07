@@ -12,25 +12,35 @@ class ActionButton extends Component {
     }
     handleBtnClick() {
         let { count } = this.state;
-        let { onAction } = this.props;
-        count += 1;
+        let { value, onAction } = this.props;
+
+        // let sign = label.substring(0, 1);
+        // let value = Number.parseInt(label.substring(1), 10);
+        // if (sign === '+') {
+        //     count = count + value;
+        // } else {
+        //     count = count - value;
+        // }
+
+        count = count + value;
         this.setState({ count }, () => {
-            //onAction();
+            onAction(value);
         })
-        onAction();
+        //onAction();
     }
     render() {
         console.log('ActionButton :: render()');
-        let { label } = this.props;
+        let { value } = this.props;
         let { count } = this.state
+        let btnClassName=`btn ${value>0?'btn-success':'btn-danger'}`;
         return (
             <div className="action-btn">
                 <div className="card">
                     <div className="card-body">
                         <button
                             onClick={() => { this.handleBtnClick() }}
-                            className="btn btn-primary">
-                            {label} | <span className="badge badge-danger">{count}</span>
+                            className={btnClassName}>
+                            {value} | <span className="badge badge-dark">{count}</span>
                         </button>
                     </div>
                 </div>
@@ -39,10 +49,10 @@ class ActionButton extends Component {
     }
 }
 ActionButton.propTypes = {
-    label: PropTypes.string
+    value: PropTypes.number
 };
 ActionButton.defaultProps = {
-    label: 'Action-btn'
+    value: 1
 }
 
 export default ActionButton;
