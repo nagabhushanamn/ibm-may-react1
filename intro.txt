@@ -1,0 +1,127 @@
+
+
+
+web-ui
+------------
+
+
+ - html
+ - css
+
+ why we need javascript on html-page in browser-envi ?
+
+
+    using browser provided web-APIs,
+    JavaScript-lang can bring any dynamic activity/data to web-page
+
+
+    browser-APIs :  ==> are based on 'w3c' recommendations ,
+    they are implemented & abstracted as JavaScript objects & functions
+
+    browser-APIs  :
+        ==> DOM, XHR/fetch,Timer
+
+using DOM
+----------
+ -> can create,retreive,update,delete HTML elements
+ -> can change element's inner text/html content 
+ -> can change element's attributes/properties
+ -> can change element's styles ( css )
+ -> can validate form-fields 
+ -> can create rich UI-components
+
+using XHR/fetch
+----------------
+ -> can communicate with server-side programs async ( AJAX )
+
+using Timer API
+----------------
+ -> can execute any action on timeout/time-interval
+
+HTML 5 APIs
+---------------
+
+    ref : https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5
+
+
+------------------------------------------------------------------
+
+
+
+
+-------------------------------------------------------------
+JS-intro : 
+
+    -> scripting-lang for web-pages in browser-envi
+    +
+    -> server-side lang on Node.js ( Javascript runtime )
+    -> Hybrid Mobile Native application
+-------------------------------------------------------------
+
+JS-features
+
+    -> FP + OOP
+    -> dynamic
+
+    -> all IO operations are Non-blocking-IO    
+    -> single-threaded process, but we can execute concurrent action while IO happening
+
+-------------------------------------------------------------
+
+
+Javascript lang is based on 'ECMAScript spec '  
+
+  latest : ES7
+
+
+-------------------------------------------------------------
+
+how to run .js-program ?
+
+  ==> using Javascript-engine/runtime
+
+  browser-envi
+
+    1. chrome  ==> (v8->c++)
+    2. firefox ==> (rhino -> java)
+    3. IE/Edge ==> chakra
+    4. Safari  ==> nitro
+    ........
+
+  other-eni
+
+    1. Node.js ==> (v8)
+    2. JVM     ==> (nashorn)
+    3. Apache couchDB
+    4. MongoDB
+    5. Adobe
+    ..........
+
+
+-------------------------------------------------------------
+
+
+"Hello World!"
+
+-------------------------------------------------------------
+
+js-topics
+
+level-1
+-------------------------------------------------------
+1. data-types
+2. scopes / execution-context
+3. FP + OOP principles
+4. using prototypes
+5. 'this' / function-binding ( static & dynamic )
+-------------------------------------------------------
+level-2
+6. ES6 - new syntax
+
+
+
+
+
+
+
+
