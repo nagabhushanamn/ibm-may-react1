@@ -2,7 +2,7 @@
 
 // step-1 : define component-class
 
-// (pure Javascript )
+// way-1 : (pure Javascript )
 
 // class Greeting extends React.Component {
 //     render() {
@@ -18,7 +18,7 @@
 // }
 
 
-// or  ( using JSX )
+// or way-2 : ( using JSX )
 class Greeting extends React.Component {
     render() {
        return (
@@ -31,7 +31,9 @@ class Greeting extends React.Component {
 
 
 // step-2 : instantiate component-class
+
 // let greeting = React.createElement(Greeting, null, null);
 // or
 let greeting=<Greeting />
+
 ReactDOM.render(greeting, document.getElementById('root'));
