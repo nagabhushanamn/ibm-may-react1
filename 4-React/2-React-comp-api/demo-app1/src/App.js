@@ -41,7 +41,7 @@ class App extends Component {
               <ActionButton value={-10} onAction={(value) => { this.incrementTotalCount(value) }} /> 
               */
              
-             [1,-1,10,-10,100,-100]
+             [1,-1,10,-10]
              .map((n,idx)=><ActionButton key={idx} value={n} onAction={(value) => { this.incrementTotalCount(value) }} />)
             
             }
