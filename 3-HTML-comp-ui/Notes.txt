@@ -1,0 +1,40 @@
+
+
+
+HTML tag/element/component
+-----------------------------
+
+every html-tag/element/component is an instance of HTMLXXXElement class
+
+ e.g
+
+ <div></div>  instanceof 'HTMLDivElement' class
+
+ i.e
+
+  HTMLDivElement  ==> class
+  <div></div>         ==> instance
+
+---------------------------------------------------------  
+
+
+
+html-component
+--------------
+
+    - props    ==> data given by parent-component while instantiation
+    - state    ==> comp's own data
+
+         e.g input-element
+
+         state : i.e 'value'
+
+         imp-note : when component's state change,
+                    always will re-render
+    ---------------------------------------------------------
+
+    Data/Props will go Down
+    Action will come Up
+
+    -------------------------------------------------------------
+
