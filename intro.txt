@@ -134,6 +134,50 @@ refences :
 -----------------------------------------------------------    
 
 
+development problems/complexties while using plain-js ( your script)
+with browser-apis
+
+
+    -> browser compatibility issues
+    -> memory-management iisues ( i.e clean un-used DOM elements)
+    -> performance issues  (i.e DOM search/changes shuld be minimal)
+    -> too much code for simple operations
+    -> data-binding is manual
+    -> code organization is manual
+
+
+    soln:
+
+     --> using third-party's js lib & frameworks
+
+
+      1. jQuery
+
+
+      MVC & MVVM based js lib & F.Ws
+
+      2. knockout 
+      3. Backbone
+      4. AngularJS from google-team  
+      5. EmberJS
+      6. DOJO
+      7. ExtJS from sencha
+      ...........
+
+
+
+      w3c ==> Web-components or custom html-elements
+      Arch : Components based arch
+
+
+       8. React from Facebook-team   : v16
+       9. Angular                    : v6
+       10. Aurelia
+       11. Vue
+       ...
+
+
+--------------------------------------------------------------
 
 
 
