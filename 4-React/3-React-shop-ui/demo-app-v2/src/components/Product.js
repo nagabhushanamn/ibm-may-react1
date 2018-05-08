@@ -14,6 +14,11 @@ class Product extends Component {
             ]
         }
     }
+    addNewReview(newReview){
+        let {reviews}=this.state;
+        reviews=reviews.concat(newReview);
+        this.setState({reviews});
+    }
     changeTab(tab) {
         this.setState({ tab });
     }
@@ -39,11 +44,9 @@ class Product extends Component {
             case 3:
                 panel = (
                     <div>
-                        <p>
-                            {this.renderReviews()}
-                            <hr/>
-                            <ReviewForm />
-                        </p>
+                        {this.renderReviews()}
+                        <hr />
+                        <ReviewForm onNewReview={(newReview)=>{this.addNewReview(newReview)}}/>
                     </div>
                 )
                 break;
@@ -60,7 +63,7 @@ class Product extends Component {
                 <div className="list-group-item">
                     <div className="row">
                         <div className="col-3 col-sm-3 col-md-3">
-                            <img src={item.image} className="img-fluid" />
+                            <img src={item.image} className="img-fluid" alt="laptop" />
                         </div>
                         <div className="col-9 col-sm-9 col-md-9">
                             <h5>{item.name}</h5>
