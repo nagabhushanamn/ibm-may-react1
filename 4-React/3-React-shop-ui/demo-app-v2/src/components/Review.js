@@ -48,7 +48,7 @@ export default (props) => {
     let { review } = props;
     return (
         <div className="row">
-            <div className="col-sm-7 col-md-7">
+            <div className="col-md-7">
                 <div className="alert alert-info">
                     {renderStars(review.stars)} &mdash; {review.author}
                     <hr />

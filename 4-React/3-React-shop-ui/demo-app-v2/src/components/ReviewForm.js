@@ -28,7 +28,14 @@ class ReviewForm extends Component {
     handleChange(e) {
         let fieldId = e.target.id;
         let fieldValue = e.target.value;
+        if (fieldId === 'stars') {
+            fieldValue = Number.parseInt(fieldValue, 10);
+        }
         this.setState({ [fieldId]: fieldValue });
+    }
+    disableBtn(stars) {
+        if (stars !== 5) return true;
+        else return false;
     }
     renderForm() {
         let { isOpen, stars, author, body } = this.state;
@@ -61,7 +68,7 @@ class ReviewForm extends Component {
                                 <label>body</label>
                                 <textarea className="form-control" id="body" onChange={(e) => { this.handleChange(e) }} value={body}></textarea>
                             </div>
-                            <button disabled={stars !== 5} className="btn btn-primary">submit</button>
+                            <button disabled={this.disableBtn(stars)} className="btn btn-primary">submit</button>
                             <button type="button" className="btn btn-danger" onClick={() => { this.toggleForm() }}>cancel</button>
                         </form>
                     </div>
@@ -72,7 +79,7 @@ class ReviewForm extends Component {
     render() {
         return (
             <div className="row">
-                <div className="col-sm-7 col-md-7">
+                <div className="col-md-7">
                     {this.renderForm()}
                 </div>
             </div>

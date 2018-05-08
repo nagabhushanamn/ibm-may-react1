@@ -14,16 +14,17 @@ class Product extends Component {
             ]
         }
     }
-    addNewReview(newReview){
-        let {reviews}=this.state;
-        reviews=reviews.concat(newReview);
-        this.setState({reviews});
+    addNewReview(newReview) {
+        let { reviews } = this.state;
+        reviews = reviews.concat(newReview);
+        this.setState({ reviews });
     }
     changeTab(tab) {
         this.setState({ tab });
     }
     renderBuyBtn(item) {
-        return item.canBuy ? <button className="btn btn-sm btn-primary">buy</button> : null
+        let { onBuy } = this.props;
+        return item.canBuy ? <button onClick={(e) => { onBuy(item) }} className="btn btn-sm btn-primary">buy</button> : null
     }
     renderReviews() {
         let { reviews } = this.state;
@@ -46,7 +47,7 @@ class Product extends Component {
                     <div>
                         {this.renderReviews()}
                         <hr />
-                        <ReviewForm onNewReview={(newReview)=>{this.addNewReview(newReview)}}/>
+                        <ReviewForm onNewReview={(newReview) => { this.addNewReview(newReview) }} />
                     </div>
                 )
                 break;
