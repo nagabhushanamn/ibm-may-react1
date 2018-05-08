@@ -42,6 +42,8 @@ class App extends Component {
           <span className="navbar-brand">shopIT</span>
         </nav>
         <hr />
+        
+        <hr />
         <div className="list-group">
           {this.renderProducts()}
         </div>
