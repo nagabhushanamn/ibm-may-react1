@@ -40,13 +40,17 @@ class App extends Component {
     let { isCartOpen } = this.state;
     this.setState({ isCartOpen: !isCartOpen });
   }
-  addToCart(item) {
+  addToCart(item, qty = 1) {
     let { cart } = this.state;
     let line = cart[item.code]
     if (!line) {
-      line = { [item.code]: { item, qty: 1 } }
+      line = { [item.code]: { item, qty } }
     } else {
-      line = { [item.code]: { item, qty: line.qty + 1 } }
+      line = { [item.code]: { item, qty: line.qty + qty } }
+      if (line[item.code].qty === 0) {
+        delete cart[item.code];
+        line = null;
+      }
     }
     cart = Object.assign({}, cart, line)
     this.setState({ cart });
@@ -66,7 +70,7 @@ class App extends Component {
   renderCart() {
     let { isCartOpen, cart } = this.state;
     if (isCartOpen) {
-      return <ViewCart cart={cart} />
+      return <ViewCart cart={cart} onItemInc={(item, qty) => this.addToCart(item, qty)} />
     } else {
       return null;
     }
@@ -83,7 +87,6 @@ class App extends Component {
         <a className="pull-right" href="/#" onClick={() => { this.toggleCart() }}>{isCartOpen ? 'View products' : 'View cart'}</a>
         <hr />
         {this.renderCart()}
-        <hr />
         <div className="list-group">
           {this.renderProducts()}
         </div>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 class ViewCart extends Component {
     renderCartLines() {
-        let { cart } = this.props;
+        let { cart, onItemInc } = this.props;
         let keys = Object.keys(cart);
         return keys.map((key, idx) => {
             let line = cart[key];
@@ -10,8 +10,13 @@ class ViewCart extends Component {
                 <tr key={idx}>
                     <td>{key}</td>
                     <td>{line.item.name}</td>
-                    <td>>&#8377;{line.item.price}</td>
-                    <td>{line.qty}</td>
+                    <td>&#8377;{line.item.price}</td>
+                    {/* <td><input type="number" value={line.qty} onChange={() => { onItemInc(line.item, 1) }} /></td> */}
+                    <td><i onClick={() => { onItemInc(line.item, 1) }} className="fa fa-plus"></i>
+                        &nbsp;<span className="badge badge-primary">
+                            {line.qty}
+                        </span>&nbsp;
+                    <i onClick={() => { onItemInc(line.item, -1) }} className="fa fa-minus"></i></td>
                     <td>&#8377;{line.item.price * line.qty}</td>
                 </tr>
             );
