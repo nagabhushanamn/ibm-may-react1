@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import Review from './Review';
 
 class Product extends Component {
     constructor(props) {
@@ -8,7 +9,8 @@ class Product extends Component {
         this.state = {
             tab: 1,
             reviews: [
-                { stars: 5, author: 'who@email.com', body: 'sample review' }
+                { stars: 5, author: 'who@email.com', body: 'sample review' },
+                { stars: 1, author: 'who@email.com', body: 'sample review' }
             ]
         }
     }
@@ -17,6 +19,12 @@ class Product extends Component {
     }
     renderBuyBtn(item) {
         return item.canBuy ? <button className="btn btn-sm btn-primary">buy</button> : null
+    }
+    renderReviews() {
+        let { reviews } = this.state;
+        return reviews.map((review, idx) => {
+            return <Review review={review} key={idx} />
+        });
     }
     renderTabPanel(item) {
         let { tab } = this.state;
@@ -29,7 +37,13 @@ class Product extends Component {
                 panel = (<div><p>Not Yet</p></div>)
                 break;
             case 3:
-                panel = (<div><p>None Yet</p></div>)
+                panel = (
+                    <div>
+                        <p>
+                            {this.renderReviews()}
+                        </p>
+                    </div>
+                )
                 break;
             default:
                 panel = null;
