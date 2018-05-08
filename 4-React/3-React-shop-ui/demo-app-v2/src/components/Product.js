@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Review from './Review';
+import ReviewForm from './ReviewForm'
 
 class Product extends Component {
     constructor(props) {
@@ -10,7 +11,6 @@ class Product extends Component {
             tab: 1,
             reviews: [
                 { stars: 5, author: 'who@email.com', body: 'sample review' },
-                { stars: 1, author: 'who@email.com', body: 'sample review' }
             ]
         }
     }
@@ -41,6 +41,8 @@ class Product extends Component {
                     <div>
                         <p>
                             {this.renderReviews()}
+                            <hr/>
+                            <ReviewForm />
                         </p>
                     </div>
                 )

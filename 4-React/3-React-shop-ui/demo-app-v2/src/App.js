@@ -28,7 +28,7 @@ class App extends Component {
     }
   }
   renderProducts() {
-    let { products, tab } = this.state;
+    let { products} = this.state;
     return products.map((product, idx) => {
       return (
         <Product item={product} key={idx}/>
