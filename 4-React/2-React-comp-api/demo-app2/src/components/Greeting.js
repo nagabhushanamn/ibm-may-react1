@@ -7,9 +7,9 @@ class Greeting extends Component {
         //this.state = {
         //    serverMessage: ''
         //}
-        this.state = {
-            timeNow: new Date().toTimeString()
-        }
+        // this.state = {
+        //     timeNow: new Date().toTimeString()
+        // }
     }
     componentWillMount() {
         console.log('Greeting :: componentWillMount()');
@@ -18,7 +18,8 @@ class Greeting extends Component {
         //let { serverMessage } = this.state;
         console.log('Greeting :: render');
         let { message } = this.props;
-        let { timeNow } = this.state;
+        // let { timeNow } = this.state;
+        let timeNow = new Date().toTimeString();
         return (
             <div className="alert alert-info">
                 {message}
@@ -37,8 +38,9 @@ class Greeting extends Component {
         //}, 3000);
 
         this.interval = setInterval(() => {
-            this.setState({ timeNow: new Date().toTimeString() })
-        }, 100);
+            //this.setState({ timeNow: new Date().toTimeString() })
+            this.forceUpdate();
+        }, 500);
 
     }
     componentWillReceiveProps(nextProps) {
@@ -70,5 +72,7 @@ Greeting.propTypes = {
 Greeting.defaultProps = {
     message: 'what to greet !!'
 }
+
+// Greeting.displayName = 'ibm-greeting';
 
 export default Greeting;

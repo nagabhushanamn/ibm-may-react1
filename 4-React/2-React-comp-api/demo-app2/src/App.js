@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import Greeting from './components/Greeting';
+import Box from './components/Box';
+import Employee from './components/Employee';
+import Product from './components/Product';
+import Parent from './components/Parent';
+import Child from './components/Child';
 
 class App extends Component {
   constructor(props) {
@@ -27,12 +32,36 @@ class App extends Component {
     return (
       <div className="container">
         <hr /><h1>React-api - lifecycle</h1><hr />
-        <button className="btn btn-primary" onClick={() => { this.changeMessage('good morning') }}>GM</button>
-        <button className="btn btn-primary" onClick={() => { this.changeMessage('good noon') }}>GN</button>
-        <button className="btn btn-primary" onClick={() => { this.changeMessage('good evening') }}>GE</button>
-        <button className="btn btn-danger" onClick={() => { this.changeMessage('') }}>Remove</button>
-        <hr />
-        {this.renderMessage()}
+        {
+          /* 
+          <button className="btn btn-primary" onClick={() => { this.changeMessage('good morning') }}>GM</button>
+          <button className="btn btn-primary" onClick={() => { this.changeMessage('good noon') }}>GN</button>
+          <button className="btn btn-primary" onClick={() => { this.changeMessage('good evening') }}>GE</button>
+          <button className="btn btn-danger" onClick={() => { this.changeMessage('') }}>Remove</button>
+          <hr />
+          {this.renderMessage()} 
+          */
+        }
+
+        {/* 
+        <Box>
+          <Employee />
+          <Employee />
+        </Box>
+        <Box>
+          <Product />
+          <Product />
+        </Box> 
+        */
+        }
+
+        {
+          /* 
+            <Parent />
+            <Child /> 
+          */
+        }
+
       </div>
     );
   }
