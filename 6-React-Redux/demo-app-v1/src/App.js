@@ -29,7 +29,6 @@ class App extends Component {
     //this.setState({ products });
 
     store.subscribe(() => {
-      console.log('App-comp - subscribing products-state & cart-state');
       let state = store.getState();
       let products = state.products;
       let cart = state.cart;

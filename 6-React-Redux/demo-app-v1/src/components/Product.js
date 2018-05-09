@@ -16,8 +16,7 @@ class Product extends Component {
     }
     componentDidMount() {
         let { item } = this.props;
-        store.subscribe(() => {
-            console.log('Product-comp - subscribing reviews-state');
+        this.unsubscribe = store.subscribe(() => {
             let reviews = store.getState().reviews[item.code] || [];
             this.setState({ reviews });
         });
@@ -81,7 +80,7 @@ class Product extends Component {
                         <div className="col-3 col-sm-3 col-md-3">
                             <img src={item.image} className="img-fluid" alt="laptop" />
                         </div>
-                        <div className="col-9 col-sm-9 col-md-9">
+                        <div className="col-sm-9 col-md-9">
                             <h5>{item.name}</h5>
                             <h6>&#8377;{item.price}</h6>
                             {this.renderBuyBtn(item)}
@@ -103,6 +102,9 @@ class Product extends Component {
                 </div>
             </div>
         );
+    }
+    componentWillUnmount() {
+        this.unsubscribe();
     }
 }
 Product.propTypes = {

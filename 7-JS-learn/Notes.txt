@@ -1,0 +1,29 @@
+
+
+
+-------------------------------------------------------
+
+in Javascript 
+
+    - all IO operations are non-blocking
+    - single-threaded process, we can execute concurrent-actions due to non-blocking IO
+
+-------------------------------------------------------
+
+
+browser e.g chrome
+
+ 1. javascript-engine ( v8 )   : based on ECMAScript spec
+     a. single-call-stack  ==> to execute functions
+     b. heap               ==> to hold objects
+ 2. Web APIs ( e.g DOM, XHR/fetch , Timer )   : w3c reccomendations     
+ 3. Event/Callback/Message Queue
+ 4. Event-Loop
+
+
+-------------------------------------------------------
+
+
+
+
+

@@ -8,7 +8,7 @@ class ViewCart extends Component {
         store.dispatch(buy(item, qty));
     }
     renderCartLines() {
-        let { cart, onItemInc } = this.props;
+        let { cart } = this.props;
         let keys = Object.keys(cart);
         this.total = 0;
         return keys.map((key, idx) => {
@@ -24,7 +24,7 @@ class ViewCart extends Component {
                         &nbsp;<span className="badge badge-primary">
                             {line.qty}
                         </span>&nbsp;
-                    <i onClick={() => this.handleBuy(line.item, -1) } className="fa fa-minus"></i></td>
+                    <i onClick={() => this.handleBuy(line.item, -1)} className="fa fa-minus"></i></td>
                     <td>&#8377;{line.item.price * line.qty}</td>
                 </tr>
             );
