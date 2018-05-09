@@ -76,8 +76,6 @@ const store = createStore(rootReducer, intialState, window.__REDUX_DEVTOOLS_EXTE
 
 let incBtn = document.getElementById('incBtn');
 let decBtn = document.getElementById('decBtn');
-
-
 let lapReviewBtn = document.getElementById('lapReviewBtn');
 let mobReviewBtn = document.getElementById('mobReviewBtn');
 
@@ -88,8 +86,8 @@ decBtn.addEventListener('click', () => {
     store.dispatch(decrement(10));
 });
 
-
 lapReviewBtn.addEventListener('click', () => {
+    store.dispatch(increment(10));
     store.dispatch(addNewReview('111', { stars: 2, author: 'nag@gmail.com', body: 'bla bla bla' }));
 });
 mobReviewBtn.addEventListener('click', () => {
