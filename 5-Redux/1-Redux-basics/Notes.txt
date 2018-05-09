@@ -1,0 +1,17 @@
+
+
+step-1:  action(s)
+
+counter-ui
+-------------------
+     - INCREMENT
+     - DECREMENT
+
+shop-ui
+-------------------
+     - BUY
+     - ADD_NEW_REVIEW
+     - LOAD_REVIEWs
+     - LOAD_PRODUCTS  
+
+
